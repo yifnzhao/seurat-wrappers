@@ -63,7 +63,7 @@ RunOptimizeALS <- function(
     }
   )
   # scale.data <- sapply(X = scale.data, FUN = t, simplify = FALSE)
-  out <- liger::optimizeALS(
+  out <- rliger::optimizeALS(
     object = scale.data,
     k = k,
     lambda = lambda,
@@ -355,7 +355,7 @@ RunQuantileNorm <- function(
   if (is.character(x = ref_dataset) && !ref_dataset %in% names(x = embeddings)) {
     stop("Cannot find reference dataset '", ref_dataset, "' in the split", call. = FALSE)
   }
-  out <- liger::quantile_norm(
+  out <- rliger::quantile_norm(
     object = embeddings,
     quantiles = quantiles,
     ref_dataset = ref_dataset,
